@@ -171,9 +171,31 @@ const server = http.createServer(async (req, res) => {
   }
 
   // =========================================================================
-  // STATIC ASSETS SERVING
+  // STATIC ASSETS SERVING (Serves React app from dist/ if built, or workspace root)
   // =========================================================================
-  let filePath = path.join(__dirname, pathname === '/' ? 'index.html' : pathname.replace(/^\//, ''));
+  const distDir = path.join(__dirname, 'dist');
+  const hasDist = fs.existsSync(distDir);
+
+  let filePath;
+  if (hasDist) {
+    if (pathname === '/' || pathname === '/index.html') {
+      filePath = path.join(distDir, 'index.html');
+    } else {
+      const candidateDist = path.join(distDir, pathname.replace(/^\//, ''));
+      if (fs.existsSync(candidateDist) && fs.statSync(candidateDist).isFile()) {
+        filePath = candidateDist;
+      } else {
+        const candidateRoot = path.join(__dirname, pathname.replace(/^\//, ''));
+        if (fs.existsSync(candidateRoot) && fs.statSync(candidateRoot).isFile()) {
+          filePath = candidateRoot;
+        } else {
+          filePath = path.join(distDir, 'index.html');
+        }
+      }
+    }
+  } else {
+    filePath = path.join(__dirname, pathname === '/' ? 'index.html' : pathname.replace(/^\//, ''));
+  }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {

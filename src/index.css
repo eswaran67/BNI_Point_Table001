@@ -1,0 +1,86 @@
+@import "../css/style.css";
+
+/* React Component Enhancements */
+.player-score-ctrl {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.modal-backdrop-enter {
+  opacity: 0;
+}
+.modal-backdrop-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.stat-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+/* MVP Top 3 Podiums in Player Points Tab */
+.mvp-podium-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mvp-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 4, 8, 0.95) 0%, rgba(20, 2, 4, 0.9) 100%);
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mvp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(246, 207, 102, 0.2);
+}
+
+.mvp-card.rank-1 {
+  border-color: #f6cf66;
+  background: radial-gradient(circle at 50% 10%, rgba(246, 207, 102, 0.15), transparent 70%),
+              linear-gradient(135deg, rgba(45, 6, 12, 0.95) 0%, rgba(20, 2, 4, 0.95) 100%);
+  box-shadow: 0 0 25px rgba(246, 207, 102, 0.35);
+}
+
+.mvp-card.rank-2 {
+  border-color: #cbd5e1;
+}
+
+.mvp-card.rank-3 {
+  border-color: #d97706;
+}
+
+.mvp-crown {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.mvp-pts-tag {
+  display: inline-block;
+  background: var(--gold-gradient-gloss);
+  color: #1a0204;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+  margin-top: 0.5rem;
+}
+
