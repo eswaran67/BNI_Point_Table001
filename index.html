@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ta,en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIVE TEAMS • MEMBER LINE-UP & POINTS TABLE | BNI Tournament</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Mukta+Malar:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Rays & Background FX -->
+  <div class="bg-ambient-glow"></div>
+  <div class="bg-light-beams"></div>
+  <div class="crowd-silhouette"></div>
+
+  <!-- Header Section (Poster Header Recreation) -->
+  <header class="poster-header-wrapper">
+    <!-- Header Banner Row (Crowned BNI Logo + Title Banner) -->
+    <div class="header-banner-row">
+      
+      <!-- BNI Official Logo with Royal Crown (Greedam) directly above BNI! -->
+      <div class="bni-crowned-group">
+        <div class="crown-container" title="Championship Royal Crown">
+          <svg width="58" height="44" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 38L10 16L24 28L32 6L40 28L54 16L60 38H4Z" fill="url(#crownGoldGrad)" stroke="#FFE89C" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="10" cy="14" r="3.5" fill="#FFE58F" stroke="#996515" stroke-width="1.5"/>
+            <circle cx="32" cy="5" r="4.5" fill="#FFFBEB" stroke="#996515" stroke-width="1.5"/>
+            <circle cx="54" cy="14" r="3.5" fill="#FFE58F" stroke="#996515" stroke-width="1.5"/>
+            <circle cx="24" cy="27" r="2.5" fill="#FFE58F"/>
+            <circle cx="40" cy="27" r="2.5" fill="#FFE58F"/>
+            <rect x="4" y="38" width="56" height="6" rx="2" fill="url(#crownBaseGrad)" stroke="#FFE89C" stroke-width="1.5"/>
+            <circle cx="16" cy="41" r="1.5" fill="#DC2626"/>
+            <circle cx="32" cy="41" r="2" fill="#0284C7"/>
+            <circle cx="48" cy="41" r="1.5" fill="#DC2626"/>
+            <defs>
+              <linearGradient id="crownGoldGrad" x1="4" y1="6" x2="60" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFF3BF"/>
+                <stop offset="0.35" stop-color="#F6CF66"/>
+                <stop offset="0.7" stop-color="#D4AF37"/>
+                <stop offset="1" stop-color="#875C16"/>
+              </linearGradient>
+              <linearGradient id="crownBaseGrad" x1="4" y1="38" x2="60" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFE082"/>
+                <stop offset="0.5" stop-color="#D4AF37"/>
+                <stop offset="1" stop-color="#78350F"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- BNI Official Logo Badge (Static, crisp, movement removed) -->
+        <div class="bni-logo-badge" title="BNI Official Logo">
+          <img src="assets/bni-logo.png" alt="BNI Official Logo" class="bni-header-logo">
+        </div>
+      </div>
+
+      <!-- Grand Title Banner Pill -->
+      <div class="grand-title-banner">
+        <!-- Left Laurel Leaves -->
+        <svg class="laurel-leaf hidden sm:block" viewBox="0 0 48 48" fill="currentColor">
+          <path d="M12 40C12 40 18 36 20 28C22 20 18 12 18 12C18 12 24 18 24 26C24 34 18 42 12 40Z" opacity="0.9"/>
+          <path d="M8 32C8 32 14 29 15 22C16 15 12 8 12 8C12 8 17 14 17 21C17 28 12 34 8 32Z" opacity="0.7"/>
+          <path d="M20 46C20 46 26 41 27 34C28 27 24 20 24 20C24 20 29 25 29 32C29 39 24 47 20 46Z" opacity="0.8"/>
+        </svg>
+
+        <!-- Central Headline -->
+        <h1 class="banner-title-text">
+          FIVE TEAMS • MEMBER LINE-UP
+        </h1>
+
+        <!-- Right Laurel Leaves -->
+        <svg class="laurel-leaf transform scale-x-[-1] hidden sm:block" viewBox="0 0 48 48" fill="currentColor">
+          <path d="M12 40C12 40 18 36 20 28C22 20 18 12 18 12C18 12 24 18 24 26C24 34 18 42 12 40Z" opacity="0.9"/>
+          <path d="M8 32C8 32 14 29 15 22C16 15 12 8 12 8C12 8 17 14 17 21C17 28 12 34 8 32Z" opacity="0.7"/>
+          <path d="M20 46C20 46 26 41 27 34C28 27 24 20 24 20C24 20 29 25 29 32C29 39 24 47 20 46Z" opacity="0.8"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="mt-2 text-xs md:text-sm tracking-widest uppercase font-semibold text-yellow-200/80">
+      BNI CHAMPIONSHIP • OFFICIAL TOURNAMENT & LEADERBOARD PORTAL
+    </div>
+  </header>
+
+  <!-- Search & Navigation Controls -->
+  <div class="max-w-6xl mx-auto px-4 mt-2 mb-4">
+    <!-- Permanent Database Status Indicator -->
+    <div class="db-status-bar flex flex-wrap items-center justify-between text-xs px-4 py-2 rounded-full mb-3">
+      <div id="dbStatusBadge" class="flex items-center gap-2 font-medium">
+        <span class="status-dot-green"></span>
+        <span id="dbStatusText" class="text-yellow-200">Connecting to Permanent Database...</span>
+      </div>
+      <div id="dbSaveStatus" class="text-yellow-300/80 font-mono text-[11px] flex items-center gap-1.5">
+        <i class="fas fa-database text-yellow-400"></i>
+        <span>SQLite 3 (data/tournament.sqlite)</span>
+      </div>
+    </div>
+
+    <!-- Live Search Bar -->
+    <div class="search-box-container">
+      <i class="fas fa-search search-icon-inside"></i>
+      <input 
+        type="text" 
+        id="playerSearchInput" 
+        class="search-input" 
+        placeholder="Player, Captain athava Team name search cheyyuka (e.g. Suhaina, Arjun, Baasha)..."
+      >
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="tournament-nav-bar">
+      <button class="nav-tab-btn active" data-tab="lineup">
+        <i class="fas fa-shield-alt text-amber-300"></i>
+        <span>Teams Line-Up</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="table">
+        <i class="fas fa-trophy text-amber-300"></i>
+        <span>Points Table</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="playerpoints">
+        <i class="fas fa-star text-amber-300"></i>
+        <span>Player Points</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="fixtures">
+        <i class="fas fa-calendar-check text-amber-300"></i>
+        <span>Match Scores</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="members">
+        <i class="fas fa-users text-amber-300"></i>
+        <span>All Players</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="poster">
+        <i class="fas fa-image text-amber-300"></i>
+        <span>Original Poster</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Main Container -->
+  <main class="main-stage-container">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: 5-TEAMS POSTER LINE-UP (DEFAULT)     -->
+    <!-- ========================================== -->
+    <section id="tab-lineup" class="tab-content-panel">
+      <!-- 5 Columns Poster Grid -->
+      <div class="poster-lineup-grid" id="posterGridContainer">
+        <!-- Dynamically rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: INTERACTIVE POINTS TABLE / STANDINGS -->
+    <!-- ========================================== -->
+    <section id="tab-table" class="tab-content-panel" style="display: none;">
+      <!-- Leader Podium -->
+      <div id="leaderPodiumDisplay" class="podium-banner">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Scoreboard Card -->
+      <div class="scoreboard-card">
+        <div class="scoreboard-header">
+          <div class="scoreboard-title-group">
+            <h2><i class="fas fa-crown mr-2 text-yellow-400"></i> TOURNAMENT LEADERBOARD</h2>
+            <p>Real-time tournament standings: Win gives 1 Point. Easily update via quick buttons or match results.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="btn-gold" onclick="app.openManualPointsModal()">
+              <i class="fas fa-edit"></i> Edit Table
+            </button>
+            <button class="btn-secondary" onclick="app.printTable()">
+              <i class="fas fa-print"></i> Print
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="points-table">
+            <thead>
+              <tr>
+                <th style="text-align: center;">Rank</th>
+                <th>Team Roster</th>
+                <th style="text-align: center;" title="Matches Played">P</th>
+                <th style="text-align: center;" title="Matches Won">W</th>
+                <th style="text-align: center;" title="Matches Lost">L</th>
+                <th style="text-align: center;" title="Matches Tied / Drawn">T</th>
+                <th style="text-align: center;" title="Recent Match Form">Form</th>
+                <th style="text-align: center;" title="Total Championship Points">PTS</th>
+                <th style="text-align: right;">Quick Actions</th>
+              </tr>
+            </thead>
+            <tbody id="pointsTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Scoring Rules Card -->
+      <div class="bg-red-950/40 border border-yellow-600/30 rounded-xl p-4 text-xs md:text-sm text-yellow-200/90 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-info-circle text-yellow-400 text-lg"></i>
+          <span><strong>Scoring System:</strong> Win = <strong>1 Point</strong> | Draw/Tie = <strong>0.5 Point</strong> | Loss = <strong>0 Points</strong></span>
+        </div>
+        <div class="text-gray-300">
+          Click <strong>"+ Win (+1)"</strong> to record a win, or use <strong>"Sync from Player Points"</strong> to calculate team score from individual player totals!
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: INDIVIDUAL PLAYER POINTS & MVP      -->
+    <!-- ========================================== -->
+    <section id="tab-playerpoints" class="tab-content-panel" style="display: none;">
+      <div class="mb-4">
+        <h2 class="text-xl md:text-2xl font-extrabold text-yellow-300 font-['Rajdhani'] tracking-wide">
+          <i class="fas fa-star mr-2 text-yellow-400"></i> INDIVIDUAL PLAYER POINTS & MVP SCORING
+        </h2>
+        <p class="text-xs md:text-sm text-pink-200/70">
+          Track individual points for every Captain, Vice Captain and Player. Use +/- buttons or type directly!
+        </p>
+      </div>
+
+      <div id="playerPointsContainer">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: MATCH FIXTURES & SCORECARD          -->
+    <!-- ========================================== -->
+    <section id="tab-fixtures" class="tab-content-panel" style="display: none;">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div>
+          <h2 class="text-xl md:text-2xl font-extrabold text-yellow-300 font-['Rajdhani'] tracking-wide">
+            <i class="fas fa-fire mr-2 text-red-500"></i> TOURNAMENT MATCH FIXTURES
+          </h2>
+          <p class="text-xs md:text-sm text-pink-200/70">
+            Enter live match results, scores and winners to automatically update the Points Table (+1 pt for winner).
+          </p>
+        </div>
+        <button class="btn-gold" onclick="app.switchTab('table')">
+          <i class="fas fa-table"></i> View Points Table
+        </button>
+      </div>
+
+      <!-- Fixtures Grid -->
+      <div class="fixtures-grid" id="fixturesContainer">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: ALL PLAYERS DIRECTORY               -->
+    <!-- ========================================== -->
+    <section id="tab-members" class="tab-content-panel" style="display: none;">
+      <div class="mb-4">
+        <h2 class="text-xl md:text-2xl font-extrabold text-yellow-300 font-['Rajdhani'] tracking-wide">
+          <i class="fas fa-users mr-2 text-yellow-400"></i> COMPLETE PLAYERS & CAPTAINS DIRECTORY
+        </h2>
+        <p class="text-xs md:text-sm text-pink-200/70">
+          All registered members from BAASHA, PADAYAPPA, SIVAJI, PETTA, and JAILER.
+        </p>
+      </div>
+
+      <div id="membersDirectoryContainer">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 6: ORIGINAL POSTER IMAGE VIEW          -->
+    <!-- ========================================== -->
+    <section id="tab-poster" class="tab-content-panel" style="display: none;">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-4 flex items-center justify-between">
+          <h2 class="text-xl font-bold text-yellow-300 font-['Rajdhani']">
+            <i class="fas fa-image mr-2 text-yellow-400"></i> ORIGINAL 5-TEAMS POSTER DESIGN
+          </h2>
+          <a href="assets/lineup-poster.jpg" download="BNI-5-Teams-Lineup.jpg" class="btn-gold text-xs">
+            <i class="fas fa-download mr-1"></i> Download Poster Image
+          </a>
+        </div>
+        <div class="border-4 border-yellow-500/70 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/20">
+          <img 
+            src="assets/lineup-poster.jpg" 
+            alt="FIVE TEAMS MEMBER LINE-UP POSTER" 
+            class="w-full h-auto object-contain block hover:scale-105 transition-transform duration-500"
+          >
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MODAL: SCORE ENTRY / TEAM ROSTER EDITOR    -->
+  <!-- ========================================== -->
+  <div id="scoreEntryModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="scoreEntryModalTitle" class="modal-title">Enter Match Score</h3>
+        <button class="modal-close-btn modal-close-trigger">&times;</button>
+      </div>
+      <div id="scoreEntryModalBody" class="modal-body">
+        <!-- Dynamic form injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
